@@ -34,6 +34,7 @@ const Login = ({ setToken }) => {
         return setFormData((d) => ({ ...d, errors }));
       }
     } else {
+      // login
       data = {
         username: formData.username,
         password: formData.password,

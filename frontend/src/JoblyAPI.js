@@ -16,7 +16,7 @@ class JoblyAPI {
     let link;
 
     if (verb === 'get') {
-      link = axios.get(`http://localhost:3001/${endpoint}`, { data: { _token, ...data } });
+      link = axios.get(`http://localhost:3001/${endpoint}`, { params: { _token, ...data } });
     } else if (verb === 'post') {
       link = axios.post(`http://localhost:3001/${endpoint}`, { _token, ...data });
     }
