@@ -9,7 +9,6 @@ import Context from './Context';
 // TODO:
 /*
 
--get token to say in usecontext or in the session
 
 Add the search bar component
   -Have it work with the Job & Companies components
@@ -37,8 +36,13 @@ function App() {
     };
   }, [token]);
 
+  const handleLogout = () => {
+    setToken(null);
+    setCurrUser(null);
+  };
+
   return (
-    <Context.Provider value={{ currUser, setCurrUser }}>
+    <Context.Provider value={{ currUser, setCurrUser, handleLogout }}>
       <div className='App'>
         <Routes setToken={setToken} />
       </div>

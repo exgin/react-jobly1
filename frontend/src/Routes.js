@@ -8,7 +8,6 @@ import Login from './Login';
 import pageNotFound from './pageNotFound';
 import Companies from './Companies';
 import Company from './Company';
-import Register from './Register';
 
 const Routes = ({ setToken }) => {
   return (
@@ -19,6 +18,10 @@ const Routes = ({ setToken }) => {
           <Switch>
             <Route exact path='/'>
               <Home />
+            </Route>
+
+            <Route exact path='/login'>
+              <Login setToken={setToken} />
             </Route>
 
             <Route exact path='/companies'>
@@ -32,10 +35,6 @@ const Routes = ({ setToken }) => {
               <Jobs />
             </Route>
 
-            <Route exact path='/login'>
-              <Login setToken={setToken} />
-            </Route>
-
             <Route exact path='/profile'>
               <Profile />
             </Route>
@@ -43,10 +42,6 @@ const Routes = ({ setToken }) => {
             <Route>
               <pageNotFound />
             </Route>
-
-            {/* <Route>
-              <Register />
-            </Route> */}
           </Switch>
         </main>
       </BrowserRouter>

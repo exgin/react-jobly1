@@ -8,7 +8,6 @@ import { BASE_TOKEN } from './App'; // destructing {} fixes our "JoblyAPI token 
 class JoblyAPI {
   static async request(endpoint, data = {}, verb = 'get') {
     let _token = localStorage.getItem(BASE_TOKEN);
-    console.log(`JoblyAPI token: ${_token}`);
 
     console.log('API Call:', endpoint, data, verb);
 
