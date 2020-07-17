@@ -18,6 +18,8 @@ class JoblyAPI {
       link = axios.get(`http://localhost:3001/${endpoint}`, { params: { _token, ...data } });
     } else if (verb === 'post') {
       link = axios.post(`http://localhost:3001/${endpoint}`, { _token, ...data });
+    } else if (verb === 'patch') {
+      link = axios.patch(`http://localhost:3001/${endpoint}`, { _token, ...data });
     }
 
     try {
@@ -59,7 +61,12 @@ class JoblyAPI {
   static async getCurrentUser(username) {
     let res = await this.request(`users/${username}`);
     console.log(`GET USER HIT`);
-    console.log(res.user);
+    return res.user;
+  }
+
+  static async saveUserProfile(username, data) {
+    let res = await this.request(`users/${username}`, data, 'patch');
+    console.log(`SAVE USER HIT`);
     return res.user;
   }
 }
