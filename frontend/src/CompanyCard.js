@@ -1,15 +1,16 @@
 import React from 'react';
 import './Card.css';
 import { NavLink } from 'react-router-dom';
-import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Col, Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
 import defLogo from './default-image.png';
+import './CompanyCard.css';
 
 const CompanyCard = ({ item = {} }) => {
   return (
-    <NavLink className='CompanyCard-link' to={`/companies/${item.handle}`}>
-      <div>
+    <Col sm='3'>
+      <NavLink className='CompanyCard-link' to={`/companies/${item.handle}`}>
         <Card>
-          <img className='CompanyCard-img' src={item.logo_url || defLogo} alt='logo' />
+          <CardImg top='100%' src={item.logo_url || defLogo} />
           <CardBody>
             <CardTitle>
               <b>{item.name}</b>
@@ -17,8 +18,8 @@ const CompanyCard = ({ item = {} }) => {
             <CardText>{item.description}</CardText>
           </CardBody>
         </Card>
-      </div>
-    </NavLink>
+      </NavLink>
+    </Col>
   );
 };
 

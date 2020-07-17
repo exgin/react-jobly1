@@ -1,17 +1,19 @@
 import React from 'react';
 import './Card.css';
-import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Button, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import './JobCard.css';
 
 const JobCard = ({ item = {} }) => {
   return (
-    <div>
-      <Card>
+    <Col sm='2'>
+      <Card className='JobCard'>
         <CardBody>
           <CardTitle>{item.title}</CardTitle>
           <CardText>Salary: {item.salary}</CardText>
+          <Button>Apply</Button>
         </CardBody>
       </Card>
-    </div>
+    </Col>
   );
 };
 
