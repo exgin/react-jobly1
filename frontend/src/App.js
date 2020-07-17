@@ -37,7 +37,7 @@ function App() {
   }, [token]);
 
   const handleLogout = () => {
-    setToken(null);
+    setToken('NO-TOKEN');
     setCurrUser(null);
   };
 
