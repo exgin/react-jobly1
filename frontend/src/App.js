@@ -25,15 +25,15 @@ function App() {
     const getCurrUser = async () => {
       try {
         let { username } = decode(token);
+        console.log(`Username:`, username);
         let res = await JoblyAPI.getCurrentUser(username);
         setCurrUser(res);
-        console.log(`currUser: ${currUser}`);
       } catch (error) {
         console.error(`getCurrUser error: ${error}`);
         setCurrUser(null);
       }
-      getCurrUser();
     };
+    getCurrUser();
   }, [token]);
 
   const handleLogout = () => {
