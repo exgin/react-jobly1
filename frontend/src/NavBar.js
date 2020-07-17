@@ -7,8 +7,6 @@ const NavBar = () => {
   // get our current user
   const { currUser, handleLogout } = useContext(Context);
 
-  console.log(`current user:`, currUser);
-
   const loggedIn = () => {
     return (
       <div>
