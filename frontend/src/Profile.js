@@ -14,6 +14,7 @@ const Profile = () => {
     last_name: currUser.last_name || '',
     email: currUser.email || '',
     errors: [],
+    successUpdate: false,
   });
 
   const handleChange = (e) => {
@@ -35,10 +36,10 @@ const Profile = () => {
       let username = formData.username;
       let res = await JoblyAPI.saveUserProfile(username, data);
 
-      setFormData((form) => ({ ...form, password: '' }));
+      setFormData((form) => ({ ...form, errors: [], successUpdate: true, password: '' }));
       setCurrUser(res);
-    } catch (error) {
-      setFormData((form) => ({ ...form, error }));
+    } catch (errors) {
+      setFormData((form) => ({ ...form, errors }));
     }
   };
 
@@ -72,9 +73,8 @@ const Profile = () => {
             <Input type='password' name='password' id='password' value={formData.password} onChange={handleChange} />
           </FormGroup>
 
-          {formData.errors.length ? <Alert type='danger' messages={formData.errors} /> : null}
-
-          {formData.errors.length ? <Alert type='danger' messages={formData.errors} /> : null}
+          {formData.errors.length ? <Alert messages={formData.errors} /> : null}
+          {formData.successUpdate ? <Alert messages={['User updated successfully.']} /> : null}
 
           <Button>Change Information</Button>
         </Form>

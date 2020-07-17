@@ -19,7 +19,9 @@ const Jobs = () => {
     setJobs(res);
   };
 
-  useEffect(() => search(), []);
+  useEffect(() => {
+    search();
+  }, []);
 
   return (
     <div className='Jobs'>
