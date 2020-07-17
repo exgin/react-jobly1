@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import JoblyAPI from './JoblyAPI';
 import Context from './Context';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const Profile = () => {
   const { currUser, setCurrUser } = useContext(Context);
@@ -21,35 +21,37 @@ const Profile = () => {
 
   return (
     <div>
-      <h1>Your Profile</h1>
-      <Form>
-        <FormGroup>
-          <Label for='username'>Username</Label>
-          <Input type='text' name='username' id='username' value={formData.username} onChange={handleChange} />
-        </FormGroup>
+      <Container>
+        <h2>Your Profile</h2>
+        <Form>
+          <FormGroup>
+            <Label for='username'>Username</Label>
+            <Input type='text' name='username' id='username' value={formData.username} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='password'>Change Password</Label>
-          <Input type='text' name='password' id='password' value={formData.password} onChange={handleChange} />
-        </FormGroup>
+          <FormGroup>
+            <Label for='password'>Change Password</Label>
+            <Input type='text' name='password' id='password' value={formData.password} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='first_name'>first_name</Label>
-          <Input type='text' name='first_name' id='first_name' value={formData.first_name} onChange={handleChange} />
-        </FormGroup>
+          <FormGroup>
+            <Label for='first_name'>first_name</Label>
+            <Input type='text' name='first_name' id='first_name' value={formData.first_name} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='last_name'>last_name</Label>
-          <Input type='text' name='last_name' id='last_name' value={formData.last_name} onChange={handleChange} />
-        </FormGroup>
+          <FormGroup>
+            <Label for='last_name'>last_name</Label>
+            <Input type='text' name='last_name' id='last_name' value={formData.last_name} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='email'>email</Label>
-          <Input type='text' name='email' id='email' value={formData.email} onChange={handleChange} />
-        </FormGroup>
+          <FormGroup>
+            <Label for='email'>email</Label>
+            <Input type='text' name='email' id='email' value={formData.email} onChange={handleChange} />
+          </FormGroup>
 
-        <Button>Change Information</Button>
-      </Form>
+          <Button>Change Information</Button>
+        </Form>
+      </Container>
     </div>
   );
 };

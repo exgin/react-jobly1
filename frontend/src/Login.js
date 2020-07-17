@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import JoblyAPI from './JoblyAPI';
 import Alert from './Alert';
 
@@ -58,57 +58,61 @@ const Login = ({ setToken }) => {
 
   let login = (
     <div className='Login'>
-      <Button onClick={toggleLogin}>Login</Button>
-      <Button onClick={toggleSignup}>SignUp</Button>
-      <Form onSubmit={handleSubmit}>
-        <FormGroup>
-          <Label for='username'>Username</Label>
-          <Input type='text' name='username' id='username' value={formData.username} onChange={handleChange} />
-        </FormGroup>
+      <Container>
+        <Button onClick={toggleLogin}>Login</Button>
+        <Button onClick={toggleSignup}>SignUp</Button>
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Label for='username'>Username</Label>
+            <Input type='text' name='username' id='username' value={formData.username} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='password'>Password</Label>
-          <Input type='password' min={5} name='password' id='password' value={formData.password} onChange={handleChange} />
-        </FormGroup>
-        {formData.errors.length ? <Alert messages={formData.errors} /> : null}
+          <FormGroup>
+            <Label for='password'>Password</Label>
+            <Input type='password' min={5} name='password' id='password' value={formData.password} onChange={handleChange} />
+          </FormGroup>
+          {formData.errors.length ? <Alert messages={formData.errors} /> : null}
 
-        <Button>Submit</Button>
-      </Form>
+          <Button>Submit</Button>
+        </Form>
+      </Container>
     </div>
   );
 
   let reg = (
     <div className='Register'>
-      <Button onClick={toggleLogin}>Login</Button>
-      <Button onClick={toggleSignup}>SignUp</Button>
+      <Container>
+        <Button onClick={toggleLogin}>Login</Button>
+        <Button onClick={toggleSignup}>SignUp</Button>
 
-      <Form onSubmit={handleSubmit}>
-        <FormGroup>
-          <Label for='username'>Username</Label>
-          <Input type='text' name='username' id='username' value={formData.username} onChange={handleChange} />
-        </FormGroup>
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Label for='username'>Username</Label>
+            <Input type='text' name='username' id='username' value={formData.username} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='password'>Password</Label>
-          <Input type='password' name='password' id='password' value={formData.password} onChange={handleChange} />
-        </FormGroup>
+          <FormGroup>
+            <Label for='password'>Password</Label>
+            <Input type='password' name='password' id='password' value={formData.password} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='first_name'>First name</Label>
-          <Input type='first_name' name='first_name' id='first_name' value={formData.first_name} onChange={handleChange} />
-        </FormGroup>
+          <FormGroup>
+            <Label for='first_name'>First name</Label>
+            <Input type='first_name' name='first_name' id='first_name' value={formData.first_name} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='last_name'>Last name</Label>
-          <Input type='last_name' name='last_name' id='last_name' value={formData.last_name} onChange={handleChange} />
-        </FormGroup>
+          <FormGroup>
+            <Label for='last_name'>Last name</Label>
+            <Input type='last_name' name='last_name' id='last_name' value={formData.last_name} onChange={handleChange} />
+          </FormGroup>
 
-        <FormGroup>
-          <Label for='email'>Email</Label>
-          <Input type='email' name='email' id='email' value={formData.email} onChange={handleChange} />
-        </FormGroup>
-        <Button>Submit</Button>
-      </Form>
+          <FormGroup>
+            <Label for='email'>Email</Label>
+            <Input type='email' name='email' id='email' value={formData.email} onChange={handleChange} />
+          </FormGroup>
+          <Button>Submit</Button>
+        </Form>
+      </Container>
     </div>
   );
 
