@@ -19,7 +19,7 @@ const Search = ({ lookFor }) => {
         <InputGroup>
           <Input name='searchInput' value={searchInput} onChange={handleChange} />
           <InputGroupAddon addonType='append'>
-            <Button color='secondary'>Search now!</Button>
+            <Button color='primary'>Search now!</Button>
           </InputGroupAddon>
         </InputGroup>
       </form>

@@ -4,12 +4,13 @@ import { v4 as uuid } from 'uuid';
 import { Row } from 'reactstrap';
 
 // res is our data from our backend server
-const CardList = ({ res = [] }) => {
+const CardList = ({ res = [], apply }) => {
   return (
     <div className='CardList'>
       <Row>
-        {res.map((resData) => (
-          <Card item={resData} key={uuid()} />
+        {/* we need the index of every card to handle the apply */}
+        {res.map((resData, idx) => (
+          <Card item={resData} key={uuid()} apply={apply} idx={idx} />
         ))}
       </Row>
     </div>

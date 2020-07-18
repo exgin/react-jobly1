@@ -74,6 +74,12 @@ class JoblyAPI {
     let res = await this.request(`jobs`, { search });
     return res.jobs;
   }
+
+  static async applyToJob(id) {
+    let res = await this.request(`jobs/${id}/apply`, {}, 'post');
+    console.log(`APPLYTOJOB HIT`);
+    return res.message;
+  }
 }
 
 export default JoblyAPI;
