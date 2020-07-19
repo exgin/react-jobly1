@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from './Context';
 
 const Home = () => {
-  return (
-    <>
-      <h1>Welcome to Jobly</h1>
-    </>
-  );
+  const { currUser } = useContext(Context);
+
+  return <div className='Home'>{!currUser ? <h1>Welcome to Jobly</h1> : <h1>Go Apply To Jobs!</h1>}</div>;
 };
 
 export default Home;

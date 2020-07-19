@@ -6,15 +6,6 @@ import useLocalStorage from './hooks/useLocalStorage';
 import JoblyAPI from './JoblyAPI';
 import Context from './Context';
 
-// TODO:
-/*
-
-
-Add the search bar component
-  -Have it work with the Job & Companies components
-  -Make it 'live-search' using a proccess called debounce
- */
-
 export const BASE_TOKEN = 'default-token';
 
 function App() {
