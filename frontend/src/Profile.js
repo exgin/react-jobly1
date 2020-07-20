@@ -46,7 +46,9 @@ const Profile = () => {
   return (
     <div>
       <Container>
-        <h2>Your Profile</h2>
+        <h2>
+          {formData.first_name} {formData.last_name}'s profile
+        </h2>
         <Form onSubmit={handleSubmit}>
           <FormGroup>
             <Label for='username'>Username</Label>

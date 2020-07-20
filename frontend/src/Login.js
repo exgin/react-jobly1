@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import JoblyAPI from './JoblyAPI';
 import Alert from './Alert';
 import './LoginReg.css';
+import $ from 'jquery';
 
 const Login = ({ setToken }) => {
   const history = useHistory();
@@ -10,8 +11,14 @@ const Login = ({ setToken }) => {
   const [formData, setFormData] = useState(INT_STATE);
   const [activeForm, setActiveForm] = useState('login');
 
-  const toggleLogin = () => setActiveForm('login');
-  const toggleSignup = () => setActiveForm('signup');
+  // when clicking on these, add an animation
+  const toggleLogin = () => {
+    setActiveForm('login');
+  };
+
+  const toggleSignup = () => {
+    setActiveForm('signup');
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,17 +65,21 @@ const Login = ({ setToken }) => {
 
   let login = (
     <div className='form'>
-      <button onClick={toggleLogin}>Login</button>
-      <button onClick={toggleSignup}>SignUp</button>
+      <button className='Login-btn' onClick={toggleLogin}>
+        Login
+      </button>
+      <button className='Signup-btn' onClick={toggleSignup}>
+        SignUp
+      </button>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor='username'>Username</label>
-          <input type='text' name='username' id='username' value={formData.username} onChange={handleChange} />
+          <label htmlFor='username'></label>
+          <input type='text' name='username' id='username' placeholder='username' value={formData.username} onChange={handleChange} />
         </div>
 
         <div>
-          <label htmlFor='password'>Password</label>
-          <input type='password' min={5} name='password' id='password' value={formData.password} onChange={handleChange} />
+          <label htmlFor='password'></label>
+          <input type='password' min={5} name='password' id='password' placeholder='password' value={formData.password} onChange={handleChange} />
         </div>
         {formData.errors.length ? <Alert messages={formData.errors} /> : null}
 
@@ -79,34 +90,50 @@ const Login = ({ setToken }) => {
 
   let reg = (
     <div className='form'>
-      <button onClick={toggleLogin}>Login</button>
-      <button onClick={toggleSignup}>SignUp</button>
+      <button className='Login-btn' onClick={toggleLogin}>
+        Login
+      </button>
+      <button className='Signup-btn' onClick={toggleSignup}>
+        SignUp
+      </button>
 
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor='username'>Username</label>
-          <input type='text' name='username' id='username' value={formData.username} onChange={handleChange} />
+          <label htmlFor='username'>
+            <small>Username</small>
+          </label>
+          <input type='text' name='username' id='username' placeholder='username' value={formData.username} onChange={handleChange} />
         </div>
 
         <div>
-          <label htmlFor='password'>Password</label>
-          <input type='password' name='password' id='password' value={formData.password} onChange={handleChange} />
+          <label htmlFor='password'>
+            <small>Password</small>
+          </label>
+          <input type='password' name='password' id='password' placeholder='password' value={formData.password} onChange={handleChange} />
         </div>
 
         <div>
-          <label htmlFor='first_name'>First name</label>
-          <input type='first_name' name='first_name' id='first_name' value={formData.first_name} onChange={handleChange} />
+          <label htmlFor='first_name'>
+            <small>First Name</small>
+          </label>
+          <input type='first_name' name='first_name' id='first_name' placeholder='first name' value={formData.first_name} onChange={handleChange} />
         </div>
 
         <div>
-          <label htmlFor='last_name'>Last name</label>
-          <input type='last_name' name='last_name' id='last_name' value={formData.last_name} onChange={handleChange} />
+          <label htmlFor='last_name'>
+            <small>Last Name</small>
+          </label>
+          <input type='last_name' name='last_name' id='last_name' placeholder='last name' value={formData.last_name} onChange={handleChange} />
         </div>
 
         <div>
-          <label htmlFor='email'>Email</label>
-          <input type='email' name='email' id='email' value={formData.email} onChange={handleChange} />
+          <label htmlFor='email'>
+            <small>Email</small>
+          </label>
+          <input type='email' name='email' id='email' placeholder='email' placeholder='email' value={formData.email} onChange={handleChange} />
         </div>
+        {formData.errors.length ? <Alert messages={formData.errors} /> : null}
+
         <button>Submit</button>
       </form>
     </div>
