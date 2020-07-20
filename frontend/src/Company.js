@@ -4,6 +4,7 @@ import JoblyAPI from './JoblyAPI';
 import CardList from './CardList';
 import Context from './Context';
 import defLogo from './default-image.png';
+import './Company.css';
 
 const Company = () => {
   const { handle } = useParams();
@@ -40,7 +41,7 @@ const Company = () => {
   return (
     <div className='Companies'>
       <div class='card'>
-        <img className='card-img' height='200px' width='50px' src={defLogo} />
+        <img className='CompanyImg' height='150px' src={defLogo} />
         <div className='card-body'>
           <h5 className='Companies-name card-title'>Comapny: {company.name} </h5>
           <p className='card-text'>{company.description}</p>

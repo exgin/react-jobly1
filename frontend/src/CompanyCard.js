@@ -15,6 +15,7 @@ const CompanyCard = ({ item = {} }) => {
             <CardTitle>
               <b>{item.name}</b>
             </CardTitle>
+            <hr />
             <CardText>{item.description}</CardText>
           </CardBody>
         </Card>
