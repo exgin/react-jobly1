@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import JoblyAPI from './JoblyAPI';
 import CardList from './CardList';
 import Context from './Context';
+import defLogo from './default-image.png';
 
 const Company = () => {
   const { handle } = useParams();
@@ -38,8 +39,13 @@ const Company = () => {
 
   return (
     <div className='Companies'>
-      <h4 className='Companies-name'>Comapny: {company.name}</h4>
-      <p>{company.description}</p>
+      <div class='card'>
+        <img className='card-img' height='200px' width='50px' src={defLogo} />
+        <div className='card-body'>
+          <h5 className='Companies-name card-title'>Comapny: {company.name} </h5>
+          <p className='card-text'>{company.description}</p>
+        </div>
+      </div>
       <CardList res={company.jobs} apply={apply} />
     </div>
   );

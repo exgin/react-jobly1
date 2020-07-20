@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
+import './Search.css';
 
 const Search = ({ lookFor }) => {
   const [searchInput, setSearchInput] = useState('');

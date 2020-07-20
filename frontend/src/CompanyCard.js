@@ -10,7 +10,7 @@ const CompanyCard = ({ item = {} }) => {
     <Col sm='3'>
       <NavLink className='CompanyCard-link' to={`/companies/${item.handle}`}>
         <Card>
-          <CardImg top='100%' src={item.logo_url || defLogo} />
+          <CardImg top='50%' src={defLogo} />
           <CardBody>
             <CardTitle>
               <b>{item.name}</b>

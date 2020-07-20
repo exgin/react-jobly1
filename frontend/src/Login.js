@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import JoblyAPI from './JoblyAPI';
 import Alert from './Alert';
 import './LoginReg.css';
-import $ from 'jquery';
 
 const Login = ({ setToken }) => {
   const history = useHistory();
